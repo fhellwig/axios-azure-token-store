@@ -1,0 +1,28 @@
+{
+  "name": "axios-azure-token-store",
+  "version": "1.0.0",
+  "description": "An axios interceptor that adds Azure token store authentication",
+  "main": "token-store.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fhellwig/axios-azure-token-store.git"
+  },
+  "keywords": [
+    "axios",
+    "azure",
+    "token",
+    "store"
+  ],
+  "author": "Frank Hellwig <frank@hellwig.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fhellwig/axios-azure-token-store/issues"
+  },
+  "homepage": "https://github.com/fhellwig/axios-azure-token-store#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
