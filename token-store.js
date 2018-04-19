@@ -34,7 +34,7 @@ class TokenStore {
   }
 
   findClaim(typ) {
-    const values = findClaims(typ);
+    const values = this.findClaims(typ);
     return values.length > 0 ? values[0] : null;
   }
 
