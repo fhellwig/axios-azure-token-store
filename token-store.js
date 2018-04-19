@@ -33,13 +33,22 @@ class TokenStore {
     }
   }
 
-  getClaim(typ) {
-    return this.getTokens().then(tokens => {
-      const claim = tokens.user_claims.find(claim => {
-        return claim.typ === typ;
-      });
-      return claim ? claim.val : null;
+  findClaim(typ) {
+    const values = findClaims(typ);
+    return values.length > 0 ? values[0] : null;
+  }
+
+  findClaims(typ) {
+    if (this._tokens === null) {
+      throw new Error('You must call getTokens() before finding claims.');
+    }
+    const values = [];
+    this._tokens.user_claims.forEach(claim => {
+      if (claim.typ === typ) {
+        values.push(claim.val);
+      }
     });
+    return values;
   }
 
   addInterceptor(client) {

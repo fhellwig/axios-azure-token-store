@@ -1,6 +1,6 @@
 {
   "name": "axios-azure-token-store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An axios interceptor that adds Azure token store authentication",
   "main": "token-store.js",
   "scripts": {

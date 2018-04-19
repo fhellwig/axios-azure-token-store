@@ -36,9 +36,13 @@ There are two utility methods, `getTokens()` and `getClaim(typ)`. Each of these 
 
 Returns a promise resolved with the tokens returned from the `/.auth/me` endpoint. This is the same method that is called internally by the axios interceptor.
 
-### getClaim(typ)
+### findClaims(typ)
 
-First calls `getTokens()` and then finds the claim having the specified `typ`. Returns a promise resolved with the claim's `val` property or `null` if no such claim is found. (It is assumed that the tokens returned from the `/.auth/me` endpoint has a `user_claims` property.)
+Searches through the `user_claims` property of the tokens obtained by calling `getTokens()` and returns an array of claim values maching the specified `typ`. This is a synchronous call. You must call `getTokens()` before calling this method. Returns an empty array if no claims were found.
+
+### findClaim(typ)
+
+Searches through the `user_claims` property of the tokens obtained by calling `getTokens()` and returns the value of the first claim value maching the specified `typ`. This is a synchronous call. You must call `getTokens()` before calling this method. Returns null if no claim was found.
 
 ## Vue.js Plugin
 
